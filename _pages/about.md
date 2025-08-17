@@ -11,15 +11,13 @@ Hi, I'm glad you're here! I made this website to bring the projects on my resume
 
 About me
 ======
-Like many other Jekyll-based GitHub Pages templates, Academic Pages makes you separate the website's content from its form. The content & metadata of your website are in structured Markdown files, while various other files constitute the theme, specifying how to transform that content & metadata into HTML pages. You keep these various Markdown (.md), YAML (.yml), HTML, and CSS files in a public GitHub repository. Each time you commit and push an update to the repository, the [GitHub pages](https://pages.github.com/) service creates static HTML pages based on these files, which are hosted on GitHub's servers free of charge.
+I’m a computer engineering graduate from the University of Illinois. During my undergraduate studies, I learned to design and optimize complex systems and gained experience with a wide range of programming languages.
 
-Many of the features of dynamic content management systems (like Wordpress) can be achieved in this fashion, using a fraction of the computational resources and with far less vulnerability to hacking and DDoSing. You can also modify the theme to your heart's content without touching the content of your site. If you get to a point where you've broken something in Jekyll/HTML/CSS beyond repair, your Markdown files describing your talks, publications, etc. are safe. You can rollback the changes or even delete the repository and start over - just be sure to save the Markdown files! You can also write scripts that process the structured data on the site, such as [this one](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb) that analyzes metadata in pages about talks to display [a map of every location you've given a talk](https://academicpages.github.io/talkmap.html).
+Early on, I was driven to make an immediate impact. I recruited a team and entered our ECE 110 project into the university’s annual entrepreneurship competition. Over the course of a year, I learned firsthand the broad challenges of turning an idea into a business, and I discovered that the most rewarding part for me was the technical achievements in our prototype.
 
-For those users that need more advanced functionality, the template also supports the following popular tools:
-- [MathJax](https://www.mathjax.org/) for mathematical equations
-- [Mermaid](https://mermaid.js.org/) for diagraming
-- [Plotly](https://plotly.com/javascript/) for plotting
+A class in Discrete Structures introduced me to a love for logic and writing proofs. After many hours discussing problems, hypotheticals, and real-world applications with my professor, I was invited to pursue an independent study applying this logic to DeFi farming on CoinBase, a relatively new area with limited research. This experience set me up to love my algorithms and models of computation class and my cryptography class where I wrote proofs for secure websites.
 
+I concluded my college journey with my senior project: designing a pinball diagnostic machine. This project allowed me to combine my hardware and software skills and reflect on how much I had grown since my first project, seeing all my knowledge come together in a tangible, functional system.
 
 Relevant Courses
 ------

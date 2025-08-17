@@ -1,7 +1,7 @@
 ---
 title: "ECE Illinois Undergraduates Developing Sensor to Detect Concussions in Athletes"
 collection: publications
-category: manuscripts
+category: articles
 permalink: /publication/2010-10-01-paper-title-number-2
 excerpt: 'A team of Illinois ECE undergraduates is developing a sensor to help detect concussions in athletes.'
 date: 2018-04-16

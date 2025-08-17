@@ -15,7 +15,7 @@ I’m a computer engineering graduate from the University of Illinois. During my
 
 Early on, I was driven to make an immediate impact. I recruited a team and entered our ECE 110 project into the university’s annual entrepreneurship competition. Over the course of a year, I learned firsthand the broad challenges of turning an idea into a business, and I discovered that the most rewarding part for me was the technical achievements in our prototype.
 
-A class in Discrete Structures introduced me to a love for logic and writing proofs. After many hours discussing problems, hypotheticals, and real-world applications with my professor, I was invited to pursue an independent study applying this logic to DeFi farming on CoinBase, a relatively new area with limited research. This experience set me up to love my algorithms and models of computation class and my cryptography class where I wrote proofs for secure websites.
+Around this time, a class in Discrete Structures introduced me to a love for logic and writing proofs. After many hours discussing problems, hypotheticals, and real-world applications with my professor, I was invited to pursue an independent study applying this logic to DeFi farming on CoinBase, a relatively new area with limited research. This experience set me up to love my algorithms and models of computation class and my cryptography class where I wrote proofs for secure websites.
 
 I concluded my college journey with my senior project: designing a pinball diagnostic machine. This project allowed me to combine my hardware and software skills and reflect on how much I had grown since my first project, seeing all my knowledge come together in a tangible, functional system.
 
@@ -41,7 +41,7 @@ Campus Involvement
 ------
 **iVenture/Founders/NSF Innovation Corps Fellow**
 
-For site content, there is one Markdown file for each type of content, which are stored in directories like _publications, _talks, _posts, _teaching, or _pages. For example, each talk is a Markdown file in the [_talks directory](https://github.com/academicpages/academicpages.github.io/tree/master/_talks). At the top of each Markdown file is structured data in YAML about the talk, which the theme will parse to do lots of cool stuff. The same structured data about a talk is used to generate the list of talks on the [Talks page](https://academicpages.github.io/talks), each [individual page](https://academicpages.github.io/talks/2012-03-01-talk-1) for specific talks, the talks section for the [CV page](https://academicpages.github.io/cv), and the [map of places you've given a talk](https://academicpages.github.io/talkmap.html) (if you run this [python file](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.py) or [Jupyter notebook](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb), which creates the HTML for the map based on the contents of the _talks directory).
+I joined Founders to find like-minded peers who were interested in entrepreneurship. Throughout my time in this club and iVenture, I hosted and co-hosted events, gave presentations and pitches at Research Park, iHotel, Avant, ChicagoBooth, and at the Gies College of Business, and developed close relationships with my team and the teams we were working alongside. 
 
 ![Venture2](/myportfolio/images/venture2.png)
 

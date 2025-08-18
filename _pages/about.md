@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-Hi, I'm glad you're here! I made this website to bring the projects on my resume to life, and so you can get to know me a little better. Feel free to explore my work, check out the demos under [Portfolio], and please reach out if you’d like to connect.
+Hi, I'm glad you're here! I made this website to bring the projects on my resume to life, and so you can get to know me a little better. Feel free to explore my work, check out the demos under [Portfolio], and please reach out if you’d like to connect. hi
 
 About me
 ======

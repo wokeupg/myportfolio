@@ -1,0 +1,216 @@
+---
+title: "Pawfect Match: Meet the Dog Version of You"
+excerpt: "A web platform that recommends dog breeds most compatible with a user’s lifestyle, and connects them with nearby shelters and ethical breeders that have those breeds available.<br/><img src='/myportfolio/images/dog1.png'>"
+collection: portfolio
+---
+<br>
+<div style="font-size: 0.9em; line-height: 1.4;">
+  <p><strong>Introduction</strong><br>
+  <hr>
+  <p>This project was completed as part of a team of three for our semester-long CS 411: Database Systems course project. I specifically worked on the relational schema, 3NF data normalization, functional dependencies, advanced sql queries, CRUD commands, and the user login interface.</p>
+
+  <p>For first-time dog owners, choosing the right breed can be difficult. Our database of over 360 breeds includes temperament, activity, trainability, and energy level. By creating a profile and selecting preferences, users receive tailored breed matches along with nearby shelters and ethical breeders for adoption.</p>
+  <p><p>The visualization below represents customer data retrieved from the database that my team and I designed and built. I implemented two advanced queries to generate meaningful insights: one displays breed matches per customer, and the other shows the locations associated with those breeds. These queries help narrow down breed choices according to customer preference regional breed availability.</p></p>
+</div>
+
+
+
+<img src="/myportfolio/images/CustProf.png" alt="CustProf photo" width="1000">
+  <figcaption>Table 1: Customer Profile Data</figcaption>
+</figure>
+
+  <img src="/myportfolio/images/CustPref.png" alt="CustPref photo" width="1000">
+  <figcaption>Table 2: Customer Preference Data</figcaption>
+</figure>
+
+<br>
+<div style="font-size: 0.9em; line-height: 1.4;">
+<p><strong>Query Description and Raw Code</strong><br>
+  <hr>
+  <p><strong>Query 1: BreedMatches per Customer</strong><br>
+  This query identifies the top 10 dog breeds that are the best fit for a specific customer. It compares each breed’s energy level to the customer’s preferred energy (allowing a difference of ±1), trainability to the customer’s preferred trainability (±2), and checks that at least one of the breed’s temperament traits matches the customer’s desired traits. Breeds are then ranked based on how closely their traits align with the customer’s preferences.</p>
+
+  <p><strong>Query 2: ShelterMatching to Customer’s Breed Matches</strong><br>
+  This query finds shelters that have the breeds selected in Query 1. It ranks the shelters by proximity to the customer: first by the same city, then by the same state, and finally by different states. The query returns the top 5 shelters along with their address details and the dog breeds they offer, helping customers locate compatible dogs nearby.</p>
+</div>
+
+
+<style>
+/* VS Code Dark+ style for collapsible SQL blocks */
+.details-sql pre {
+    background: rgba(0, 0, 0, 0.6); /* gray */
+    border-radius: 8px;
+    padding: 15px;
+    overflow-x: auto;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 0.85em;
+    border: 1px solid rgba(60,60,60,0.6);
+}
+
+.details-sql summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: #569cd6; /* VS Code blue */
+    margin-bottom: 8px;
+    font-size: 0.9em;
+}
+
+.details-sql code {
+    display: block;
+    color: #d4d4d4; /* code color, not highlighted */
+    white-space: pre;
+}
+
+/* SQL syntax highlighting for the two queries*/
+.details-sql .keyword { color: #569cd6; font-weight: bold; }  /* blue */
+.details-sql .string  { color: #ce9178; }                     /* orange/brown */
+.details-sql .number  { color: #b5cea8; }                     /* green */
+.details-sql .comment { color: #6a9955; font-style: italic; } /* greenish */
+</style>
+
+<style>
+/* VS Code Dark+ style for collapsible SQL blocks */
+.details-sql pre {
+    background: rgba(0, 0, 0, 0.6); /* transparent black */
+    border-radius: 8px;
+    padding: 15px;
+    overflow-x: auto;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 0.85em;
+    border: 1px solid rgba(60,60,60,0.4);
+}
+
+.details-sql summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: #569cd6; /* VS Code blue */
+    margin-bottom: 8px;
+    font-size: 0.9em;
+}
+
+.details-sql code {
+    display: block;
+    color: #d4d4d4; /* base code color */
+    white-space: pre;
+}
+
+/* SQL syntax highlighting */
+.details-sql .keyword { color: #569cd6; font-weight: bold; }  /* blue */
+.details-sql .string  { color: #ce9178; }                     /* orange/brown */
+.details-sql .number  { color: #b5cea8; }                     /* green */
+.details-sql .comment { color: #6a9955; font-style: italic; } /* greenish */
+</style>
+
+<details class="details-sql">
+  <summary>Query 1: BreedMatches per Customer Query</summary>
+  <pre><code>
+<span class="keyword">SELECT</span>
+    d.DogBreedName,
+    d.DogBreedID,
+    d.Temperament <span class="keyword">AS</span> BreedTemperament,
+    p.CustPrefTemperament <span class="keyword">AS</span> CustomerPrefs,
+    d.EnergyLevelValue <span class="keyword">AS</span> BreedEnergy,
+    p.EnergyLevel <span class="keyword">AS</span> CustomerEnergyPref,
+    d.TrainabilityValue <span class="keyword">AS</span> BreedTrainability,
+    p.CustPrefTrainability <span class="keyword">AS</span> CustomerTrainabilityPref
+<span class="keyword">FROM</span> DogBreed d
+<span class="keyword">JOIN</span> CustomerPreference p 
+    <span class="keyword">ON</span> d.EnergyLevelValue BETWEEN p.EnergyLevel - <span class="number">1</span> AND p.EnergyLevel + <span class="number">1</span>
+   <span class="keyword">AND</span> d.TrainabilityValue BETWEEN p.CustPrefTrainability - <span class="number">2</span> AND p.CustPrefTrainability + <span class="number">2</span>
+   <span class="keyword">AND</span> (
+        d.Temperament <span class="keyword">LIKE</span> CONCAT(<span class="string">'%'</span>, TRIM(SUBSTRING_INDEX(p.CustPrefTemperament, <span class="string">','</span>, <span class="number">1</span>)), <span class="string">'%'</span>)
+     <span class="keyword">OR</span> d.Temperament <span class="keyword">LIKE</span> CONCAT(<span class="string">'%'</span>, TRIM(SUBSTRING_INDEX(SUBSTRING_INDEX(p.CustPrefTemperament, <span class="string">','</span>, <span class="number">2</span>), <span class="string">','</span>, -<span class="number">1</span>)), <span class="string">'%'</span>)
+     <span class="keyword">OR</span> d.Temperament <span class="keyword">LIKE</span> CONCAT(<span class="string">'%'</span>, TRIM(SUBSTRING_INDEX(p.CustPrefTemperament, <span class="string">','</span>, -<span class="number">1</span>)), <span class="string">'%'</span>)
+   )
+<span class="keyword">WHERE</span> p.CustomerId = <span class="number">3</span>
+<span class="keyword">ORDER BY</span> 
+    ABS(d.EnergyLevelValue - p.EnergyLevel) <span class="keyword">ASC</span>,
+    ABS(d.TrainabilityValue - p.CustPrefTrainability) <span class="keyword">ASC</span>
+<span class="keyword">LIMIT</span> <span class="number">10</span>;
+</code></pre>
+</details>
+
+<details class="details-sql">
+  <summary>Query 2: ShelterMatching to Customer’s Breed Matches</summary>
+  <pre><code>
+<span class="keyword">WITH</span> BreedMatches <span class="keyword">AS</span> (
+    <span class="keyword">SELECT</span>
+        d.DogBreedID,
+        d.DogBreedName,
+        d.Temperament <span class="keyword">AS</span> BreedTemperament,
+        p.CustPrefTemperament <span class="keyword">AS</span> CustomerPrefs,
+        d.EnergyLevelValue <span class="keyword">AS</span> BreedEnergy,
+        p.EnergyLevel <span class="keyword">AS</span> CustomerEnergyPref,
+        d.TrainabilityValue <span class="keyword">AS</span> BreedTrainability,
+        p.CustPrefTrainability <span class="keyword">AS</span> CustomerTrainabilityPref
+    <span class="keyword">FROM</span> DogBreed d
+    <span class="keyword">JOIN</span> CustomerPreference p 
+        <span class="keyword">ON</span> d.EnergyLevelValue BETWEEN p.EnergyLevel - <span class="number">1</span> AND p.EnergyLevel + <span class="number">1</span>
+       <span class="keyword">AND</span> d.TrainabilityValue BETWEEN p.CustPrefTrainability - <span class="number">2</span> AND p.CustPrefTrainability + <span class="number">2</span>
+       <span class="keyword">AND</span> (
+            d.Temperament <span class="keyword">LIKE</span> CONCAT(<span class="string">'%'</span>, TRIM(SUBSTRING_INDEX(p.CustPrefTemperament, <span class="string">','</span>, <span class="number">1</span>)), <span class="string">'%'</span>)
+         <span class="keyword">OR</span> d.Temperament <span class="keyword">LIKE</span> CONCAT(<span class="string">'%'</span>, TRIM(SUBSTRING_INDEX(SUBSTRING_INDEX(p.CustPrefTemperament, <span class="string">','</span>, <span class="number">2</span>), <span class="string">','</span>, -<span class="number">1</span>)), <span class="string">'%'</span>)
+         <span class="keyword">OR</span> d.Temperament <span class="keyword">LIKE</span> CONCAT(<span class="string">'%'</span>, TRIM(SUBSTRING_INDEX(p.CustPrefTemperament, <span class="string">','</span>, -<span class="number">1</span>)), <span class="string">'%'</span>)
+       )
+    <span class="keyword">WHERE</span> p.CustomerId = <span class="number">3</span>
+    <span class="keyword">ORDER BY</span> 
+        ABS(d.EnergyLevelValue - p.EnergyLevel) <span class="keyword">ASC</span>,
+        ABS(d.TrainabilityValue - p.CustPrefTrainability) <span class="keyword">ASC</span>
+    <span class="keyword">LIMIT</span> <span class="number">10</span>
+)
+
+<span class="keyword">SELECT</span> 
+    s.ShelterId,
+    s.ShelterName,
+    s.StreetAddress,
+    s.City,
+    s.State,
+    s.ZipCode,
+    b.DogBreedID,
+    b.DogBreedName,
+    c.City <span class="keyword">AS</span> CustomerCity,
+    c.State <span class="keyword">AS</span> CustomerState,
+    <span class="keyword">CASE</span> 
+        <span class="keyword">WHEN</span> s.City = c.City <span class="keyword">THEN</span> <span class="string">'Same City'</span>
+        <span class="keyword">WHEN</span> s.State = c.State <span class="keyword">THEN</span> <span class="string">'Same State'</span>
+        <span class="keyword">ELSE</span> <span class="string">'Different State'</span>
+    <span class="keyword">END</span> <span class="keyword">AS</span> Proximity
+<span class="keyword">FROM</span> ShelterProfile s
+<span class="keyword">JOIN</span> ShelterOffering so 
+    <span class="keyword">ON</span> s.ShelterId = so.ShelterID
+<span class="keyword">JOIN</span> BreedMatches b 
+    <span class="keyword">ON</span> so.DogBreedID = b.DogBreedID
+<span class="keyword">JOIN</span> CustomerProfile c 
+    <span class="keyword">ON</span> c.CustomerId = <span class="number">3</span>
+<span class="keyword">ORDER BY</span> 
+    <span class="keyword">CASE</span> <span class="keyword">WHEN</span> s.City = c.City <span class="keyword">THEN</span> <span class="number">0</span> <span class="keyword">ELSE</span> <span class="number">1</span> <span class="keyword">END</span>,
+    <span class="keyword">CASE</span> <span class="keyword">WHEN</span> s.State = c.State <span class="keyword">THEN</span> <span class="number">0</span> <span class="keyword">ELSE</span> <span class="number">1</span> <span class="keyword">END</span>,
+    s.ShelterName
+<span class="keyword">LIMIT</span> <span class="number">5</span>;
+</code></pre>
+</details>
+
+<br>
+
+<div style="font-size: 0.9em; line-height: 1.4;">
+  <p><strong>Results</strong><br>
+    <hr>
+    </p>
+</div>
+
+<img src="/myportfolio/images/Queryone.png" alt="Queryone photo" width="1000">
+  <figcaption>Table 3: Query 1 Results</figcaption>
+</figure>
+
+  <img src="/myportfolio/images/Querytwo.png" alt="Querytwo photo" width="1000">
+  <figcaption>Table 4: Query 2 Results</figcaption>
+</figure>
+
+<br>
+<p>
+<p>Check out the project demo: <a href="https://illinois.zoom.us/rec/share/lzBGoH6A-vRqc9UmtdwtfgTRVO6ZKZXG8QNObe48o-t77BZWPDBDyfVWf3RuJasD.SIBzybomcvT4sTUW?startTime=1745892454000" target="_blank">Pawfect Match Final Demo</a></p>
+<p>Check out the Github repo: <a href="https://github.com/wokeupg/CS411-Project" target="_blank">Pawfect Match Github Repository</a></p>
+</p>
+

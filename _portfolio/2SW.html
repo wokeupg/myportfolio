@@ -1,0 +1,84 @@
+---
+title: "SwitchWizard: A Pinball Diagnostic Device"
+excerpt: "Designed and programmed a device for diagnosing pinball machines. <br/><img src='/myportfolio/images/pinball2.png'>"
+collection: portfolio
+---
+<br>
+<strong>Introduction</strong>
+<hr>
+<span style="font-weight: 550;">Problem:</span>
+The project idea came from our group member Logan, a pinball enthusiast who repairs machines in his free time. Pinball machines are complex, with 60–100 switches that must all function correctly. Machines built before 1977 are electromechanical machines. They rely only on relays and switches making them especially difficult to troubleshoot.
+<br>
+<span style="font-weight: 550;">Solution:</span>
+Our device, the Switch Wizard, monitors multiple switches at once and sends timestamped data over Wi-Fi to a laptop, even while the game is running on live 24V AC. This makes diagnosing problems such as with score motors much simpler.
+<br>
+<span style="font-weight: 550;">Demo on score motor:</span>
+<a href="https://www.youtube.com/watch?v=oGpSrFVuOkM" target="_blank" rel="noopener">
+  Watch the Demo on YouTube
+</a>
+<br>
+<br>
+
+<img src="/myportfolio/images/switch1.png" alt="CustProf photo" width="1000">
+  <figcaption>Figure 1: Visual Representation of SwitrchWizard</figcaption>
+
+
+<br>
+<br>
+
+Specifically, I worked on pulse generation and detection (programming the ESP32) and the Filter Subsytem on the PCB.
+<br>
+<br>
+
+<strong>Pulse generation & Detection</strong>
+<hr>
+<br>
+
+To reliably monitor multiple switches in the pinball machine, I leveraged the dual-core ESP32, dedicating one core to pulse generation and the other to pulse detection. On Core 1, we generated pulse trains at 1 kHz, 1.5 kHz, and 2 kHz with a 50% duty cycle. Since some switches are connected in parallel and it is crucial to identify which pulse corresponds to which switch, each frequency was assigned to a separate SwitchWizard device, each with its own ESP32. The code, written in Arduino, manages pulse duration, delay, number of pulses, and input/output pins, enabling simultaneous monitoring of multiple switches while maintaining precise timing and accurate identification, as illustrated in Figure 2.
+  <img src="/myportfolio/images/switch2.png" 
+       alt="CustProf photo" 
+       style="display: block; margin: 0 auto; max-width: 75%; height: auto;">
+  <figcaption>Figure 2: Pulse Generation and Detection Code Flowchart</figcaption>
+
+
+
+<strong>Filter Subsystem</strong>
+<hr>
+
+I designed the isolation circuit on Falstad to ensure reliable detection of the pulse signals and protect the ESP32 from damage while the pinball machine is running on 24 V, 60 Hz AC. 
+<br>
+<br>
+The circuit in Figure 3 amplifies the pulse, so that it is strong enough to withstand noise on the power line as seen in Figure 5. It then filters out the 60 Hz component using a high-pass LC filter to protect the 3.3 V microcontroller, and strengthens the signal for detection as seen in Figure 4 (red is the output signal).
+<br>
+  <img src="/myportfolio/images/switch3.png" 
+       alt="CustProf photo" 
+       style="display: block; margin: 0 auto; max-width: 75%; height: auto;">
+  <figcaption>Figure 3: Filter Subsystem Circuit modeled on Falstad</figcaption>
+  <br>
+    <img src="/myportfolio/images/switch4.png" 
+       alt="CustProf photo" 
+       style="display: block; margin: 0 auto; max-width: 75%; height: auto;">
+  <figcaption>Figure 4: Input and Output Signals from Isolation Circuit</figcaption>
+  <br>
+      <img src="/myportfolio/images/switch5.png" 
+       alt="CustProf photo" 
+       style="display: block; margin: 0 auto; max-width: 75%; height: auto;">
+  <figcaption>Figure 5: Injected Pulses on 60 Hz wave</figcaption>
+
+
+
+
+
+
+
+<br>
+<a href="https://docs.google.com/presentation/d/1wU5-5w0J8VKCHbW6ZvgLHjkdiqagtB4ySdZv9zh6d6c/edit?slide=id.g3186e8a9813_0_0#slide=id.g3186e8a9813_0_0" target="_blank" rel="noopener">Open final presentation slides</a>
+<br>
+<a href="https://www.youtube.com/watch?v=oGpSrFVuOkM" target="_blank" rel="noopener">Watch demo again</a>
+<!---center the captions --->
+<style>
+  figcaption {
+    text-align: center;
+  }
+</style>
+<!---center the captions --->

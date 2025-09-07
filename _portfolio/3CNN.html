@@ -1,0 +1,61 @@
+---
+title: "Convolutional Neural Network"
+excerpt: "I implemented the forward pass of a convolutional neural network (CNN) from scratch in CUDA. <br/><img src='/myportfolio/images/cnn.png'>"
+collection: portfolio
+---
+
+
+<body>
+
+  <div class="section">
+    <p>
+      I implemented the forward pass of a convolutional neural network (CNN) from scratch in CUDA. My CUDA implementation iterates over the input tensor dimensions (batch size, channels, height, width), sliding convolutional kernels across spatial dimensions, performing element-wise multiplications and summations, and writing the resulting activations into the output feature map. 
+    </p>
+
+ <figure>
+  <img src="/myportfolio/images/cnndiagram.png" alt="forward pass" />
+  <figcaption class="caption">
+    Forward Pass of a CNN, Source: 
+    <a href="https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-convolutional-neural-networks#layer" target="_blank" rel="noopener noreferrer">
+      Stanford CS230 CNN Cheatsheet
+    </a>
+  </figcaption>
+</figure>
+
+ <figure>
+  <img src="/myportfolio/images/convolution.png" alt="convolution operation" />
+  <figcaption class="caption">
+    Convolution Layer, Source: 
+    <a href="https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-convolutional-neural-networks#layer" target="_blank" rel="noopener noreferrer">
+      Stanford CS230 CNN Cheatsheet
+    </a>
+  </figcaption>
+</figure>
+
+  </div>
+
+  <div class="section">
+    <h2>Project Milestones Overview</h2>
+    <ul>
+      <li>
+        <strong>Milestone 1:</strong> Developed a baseline GPU convolution kernel implementing matrix unrolling techniques to convert convolution into matrix multiplication. Ensured correctness and established a performance baseline for batch processing on NVIDIA GPUs.
+      </li>
+      <li>
+        <strong>Milestone 2:</strong> Implemented memory coalescing and introduced matrix multiplication optimizations, including shared memory buffering, reducing execution time from 200ms to 80ms.
+      </li>
+      <li>
+        <strong>Milestone 3:</strong> Applied GPU optimizations for minimizing OP times:
+        <ul>
+          <li>CUDA Streams: overlaps data transfers with computation.</li>
+          <li>Tensor Cores: utilizes GPU hardware specialized for fast FP16 operations.</li>
+          <li> Kernel Fusion: fused multiple kernel operations (unrolling, multiplication, permutation) into a single optimized kernel.</li>
+          <li>Additional optimizations: loop unrolling, <code>__restrict__</code> qualifiers, and fixed point (FP16) arithmetic implementation.</li>
+        </ul>
+        Kernel fusion ultimately reduced OP times from 200ms to <10ms for a batch size of 10,000.
+      </li>
+    </ul>
+  </div>
+
+</body>
+
+<p>Check out the Github repo: <a href="https://github.com/wokeupg/applied-parallel-programming/" target="_blank">applied-parallel-programming</a></p>

@@ -59,4 +59,4 @@ In my free time, I like to play tennis, play chess, run 5ks, and solve online pu
 
 [NYT Mini CrossWord](https://www.nytimes.com/crosswords/game/mini?embed=ipad)
 
-[Wordle of the Day](https://fillomino.puzzlebaron.com)
+[Wordle of the Day](https://www.nytimes.com/games/wordle/index.html)

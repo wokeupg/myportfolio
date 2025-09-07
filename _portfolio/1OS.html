@@ -1,0 +1,32 @@
+---
+title: "Linux-Based OS"
+excerpt: "Built a basic operating system from scratch in a team of 4. <br/><img src='/myportfolio/images/linux5.png'>"
+collection: portfolio
+---
+
+In the Fall of 2024, I collaborated in a team of 4 to build a Linux-based operating system from scratch. The OS implemented memory paging and virtual memory, a read-only file system, and multiple device drivers, including keyboard, mouse, and real-time clock. It supported executing user-level programs via system calls and featured multi-task scheduling for concurrent process execution.
+
+I primarily contributed to initializing the Interrupt Descriptor Table (IDT), setting up paging, implementing the real-time clock, writing system call operations, and developing the file system driver.
+
+
+<figure style="display: block; text-align: center; margin: 20px 0;">
+  <img src="/myportfolio/images/ece391.png" alt="Command-Line Shell Interface" style="width:500px; height:auto; display:block; margin: 0 auto;" />
+  <figcaption style="text-align: center; margin-top: 8px; display: block;">
+    Command-Line Shell Interface
+  </figcaption>
+</figure>
+
+<h3>OS Features</h3>
+<ul>
+  <li><strong>Memory paging / virtualization</strong> – initialized paging</li>
+  <li><strong>Terminal I/O and RTC</strong> – implemented terminal input/output and real-time clock</li>
+  <li><strong>In-memory filesystem</strong> – read-only file system with file lookup and directories</li>
+  <li><strong>User/Kernel Privilege Mode</strong> – enforced via system calls</li>
+  <li><strong>User programs</strong> – loaded and executed user-level programs</li>
+  <li><strong>Multitasking</strong> – task management with Process Control Blocks (PCBs)</li>
+  <li><strong>Multiple active shells</strong> – multi-terminal functionality</li>
+  <li><strong>System call interface</strong> – enabled user programs to request kernel services</li>
+  <li><strong>Scheduling</strong> – multi-task scheduling across terminals</li>
+</ul>
+
+<p>Check out the Github repo: <a href="https://github.com/wokeupg/linux-based-OS" target="_blank">linux-based-OS</a></p>

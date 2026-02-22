@@ -11,13 +11,15 @@ Hi, I'm glad you're here! I made this website to bring the projects on my resume
 
 About me
 ======
-I’m a computer engineering graduate from the University of Illinois. During my undergraduate studies, I learned to design and optimize complex systems and gained experience with a wide range of programming languages.
+During my undergraduate studies, I gained familiarity with:
 
-Early on, I was driven to make an immediate impact. I recruited a team and entered our ECE 110 project into the university’s annual entrepreneurship competition. Over the course of a year, I learned firsthand the broad challenges of turning an idea into a business, and I discovered that the most rewarding part for me was the technical achievements in our prototype.
+- Embedded Systems: connecting software and hardware to create two of my projects, a concussion-detection sensor for football players and a pinball diagnostic tool for enthusiasts
+- Low-level programming: created an operating system from scratch
+- Discrete Structures: worked on applying discrete logic to maximize profit in the field of DeFi farming on Coinbase, a relatively new area with limited research
+- Cryptographic Systems: created a password tool for individual use based on perfect secrecy
+- Databases: wrote the MySQL queries for a pet adoption website
 
-Around this time, a class in Discrete Structures introduced me to a love for logic and writing proofs. After many hours discussing problems, hypotheticals, and real-world applications with my professor, I was invited to pursue an independent study applying this logic to DeFi farming on CoinBase, a relatively new area with limited research. This experience set me up to love my algorithms and models of computation class and my cryptography class where I wrote proofs for secure websites.
 
-I concluded my college journey with my senior project: designing a pinball diagnostic machine. This project allowed me to combine my hardware and software skills and reflect on how much I had grown since my first project, seeing all my knowledge come together in a tangible, functional system.
 
 Relevant Courses
 ------

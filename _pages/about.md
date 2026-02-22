@@ -17,7 +17,7 @@ During my undergraduate studies, I gained familiarity with:
 
 - **FPGA Design**: Implemented a Space Shooters–style arcade game on an FPGA using SystemVerilog, designing synchronous digital logic, hierarchical modules, and finite state machines; implemented VGA timing control, frame buffering, collision detection, and hardware-driven input handling.
 
-- **Operating Systems**: Built Linux-based operating system from scratchh, implementing context switching, interrupt descriptor tables, paging-based memory management, system call interfaces, and cooperative/preemptive scheduling.
+- **Operating Systems**: Built Linux-based operating system from scratch, implementing context switching, interrupt descriptor tables, paging-based memory management, system call interfaces, and cooperative/preemptive scheduling.
 
 - **Discrete Logic Research**: Applied logic-based modeling to construct and analyze yield-optimization strategies for DeFi farming, focusing on constraint satisfaction and profit maximization under dynamic reward structures.
 

@@ -13,7 +13,7 @@ About me
 ======
 During my undergraduate studies, I gained familiarity with:
 
-- **Embedded Systems**: Developed microcontroller-based systems integrating hardware and firmware, including a concussion-detection device using sensor fusion and threshold-based impact analysis, and a pinball machine diagnostic tool for real-time signal monitoring and fault detection.
+- **Embedded Systems**: Developed microcontroller-based systems integrating hardware and software, including a concussion-detection device using accelerometer and gyroscope data and threshold-based impact analysis, and a pinball machine diagnostic tool for real-time signal monitoring and fault detection.
 
 - **FPGA Design**: Implemented a Space Shooters–style arcade game on an FPGA using SystemVerilog, designing synchronous digital logic, hierarchical modules, and finite state machines; implemented VGA timing control, frame buffering, collision detection, and hardware-driven input handling.
 

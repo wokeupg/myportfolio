@@ -13,11 +13,17 @@ About me
 ======
 During my undergraduate studies, I gained familiarity with:
 
-- **Embedded Systems**: connecting software and hardware to create two of my projects, a concussion-detection sensor for football players and a pinball diagnostic tool for enthusiasts
-- **Low-level Programming**: created an operating system from scratch
-- **Discrete Structures**: worked on applying discrete logic to maximize profit in the field of DeFi farming on Coinbase, a relatively new area with limited research
-- **Cryptographic Systems**: created a password tool for individual use based on perfect secrecy
-- **Databases**: wrote the MySQL queries for a pet adoption website
+- **Embedded Systems**: Developed microcontroller-based systems integrating hardware and firmware, including a concussion-detection device using sensor fusion and threshold-based impact analysis, and a pinball machine diagnostic tool for real-time signal monitoring and fault detection.
+
+- **FPGA Design**: Implemented a Space Shooters–style arcade game on an FPGA using SystemVerilog, designing synchronous digital logic, hierarchical modules, and finite state machines; implemented VGA timing control, frame buffering, collision detection, and hardware-driven input handling.
+
+- **Operating Systems**: Built Linux-based operating system from scratchh, implementing context switching, interrupt descriptor tables, paging-based memory management, system call interfaces, and cooperative/preemptive scheduling.
+
+- **Discrete Logic Research**: Applied logic-based modeling to construct and analyze yield-optimization strategies for DeFi farming, focusing on constraint satisfaction and profit maximization under dynamic reward structures.
+
+- **Cryptography**: Designed and implemented a password encrytion tool that satisfies the constraints of Perfect Secrecy using <a href="https://en.wikipedia.org/wiki/One-time_pad" target="_blank">One-Time Pads</a>.
+
+- **Databases**: Designed normalized relational schemas and implemented optimized MySQL queries (JOINs, indexing strategies, aggregation, and transaction handling) for a pet adoption web application.
 
 
 

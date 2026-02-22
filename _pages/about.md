@@ -13,11 +13,11 @@ About me
 ======
 During my undergraduate studies, I gained familiarity with:
 
-- Embedded Systems: connecting software and hardware to create two of my projects, a concussion-detection sensor for football players and a pinball diagnostic tool for enthusiasts
-- Low-level programming: created an operating system from scratch
-- Discrete Structures: worked on applying discrete logic to maximize profit in the field of DeFi farming on Coinbase, a relatively new area with limited research
-- Cryptographic Systems: created a password tool for individual use based on perfect secrecy
-- Databases: wrote the MySQL queries for a pet adoption website
+- **Embedded Systems**: connecting software and hardware to create two of my projects, a concussion-detection sensor for football players and a pinball diagnostic tool for enthusiasts
+- **Low-level Programming**: created an operating system from scratch
+- **Discrete Structures**: worked on applying discrete logic to maximize profit in the field of DeFi farming on Coinbase, a relatively new area with limited research
+- **Cryptographic Systems**: created a password tool for individual use based on perfect secrecy
+- **Databases**: wrote the MySQL queries for a pet adoption website
 
 
 
